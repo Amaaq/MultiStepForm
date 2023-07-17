@@ -1,0 +1,74 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.not-displayed {
+    display: none;
+}
+.hidden {
+    visibility: hidden;
+}
+#container {
+    position: relative;
+    background-color: hsl(217, 100%, 97%);
+    background-image: url(assets/images/bg-sidebar-mobile.svg);
+    background-repeat: no-repeat;
+    background-size:auto;
+    text-align: center;
+    min-height: 100vh;
+}
+#steps-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+.step {
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 0.4rem 0.6rem;
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+.step-details {
+    display: none;
+}
+
+.content {
+    background-color: white;
+    border-radius: 0.5rem;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    text-align: left;
+}
+#step-buttons {
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+#next-step {
+    padding: 0.7rem 1rem;
+    background-color: hsl(213, 96%, 18%);
+    color: white;
+    font-weight: 500;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+#go-back {
+    color: hsl(231, 11%, 63%);
+    font-weight: 500;
+    cursor: pointer;
+}
