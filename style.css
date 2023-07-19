@@ -228,6 +228,7 @@ p {
 #selected-plan h4 {
     color: hsl(231, 11%, 63%);
     text-decoration: underline;
+    cursor: pointer;
 }
 #selected-plan span {
     color: hsl(213, 96%, 18%);
