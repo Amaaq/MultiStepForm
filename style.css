@@ -31,7 +31,15 @@ body {
     gap: 1.5rem;
     padding: 2rem;
 }
-.step {
+/* .step {
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 0.4rem 0.6rem;
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+} */
+.step-number {
     border: 1px solid white;
     border-radius: 50%;
     padding: 0.4rem 0.6rem;
