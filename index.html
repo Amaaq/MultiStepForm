@@ -48,32 +48,32 @@
 
         <div id="step-content">
 
-            <div class="content">
-                <h2>personnal info</h2>
-                <p>please provide your name, email adress, and phone number.</p>
+            <div class="content not-displayed">
+                <h2>Personnal info</h2>
+                <p>Please provide your name, email adress, and phone number.</p>
                 <form>
                     <div>
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name">
+                        <input type="text" id="name" placeholder="e.g. Stephen King" name="name">
                     </div>
                     <div>
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email">
+                        <input type="email" id="email" name="email" placeholder="e.g. stephenking@lorem.com">
                     </div>
                     <div>
                         <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
+                        <input type="tel" id="phone" name="phone" placeholder="e.g +1 234 567 890">
                     </div>
                 </form>
             </div>
 
             <div class="content not-displayed">
-                <h2>select your plan</h2>
-                <p>you have the option of monthly or yearly billing</p>
+                <h2>Select your plan</h2>
+                <p>You have the option of monthly or yearly billing</p>
                 <div id="plan-selection">
 
                     <div class="plan">
-                        <div class="icon"></div>
+                        <div class="icon"><img src="assets/images/icon-arcade.svg"></div>
                         <div class="plan-name-price">
                             <h5>arcade</h5>
                             <h6 class="price">$9/mo</h6>
@@ -82,7 +82,7 @@
                     </div>
 
                     <div class="plan">
-                        <div class="icon"></div>
+                        <div class="icon"><img src="assets/images/icon-advanced.svg"></div>
                         <div class="plan-name-price">
                             <h5>advanced</h5>
                             <h6 class="price">$12/mo</h6>
@@ -91,7 +91,7 @@
                     </div>
 
                     <div class="plan">
-                        <div class="icon"></div>
+                        <div class="icon"><img src="assets/images/icon-pro.svg"></div>
                         <div class="plan-name-price">
                             <h5>pro</h5>
                             <h6 class="price">$15/mo</h6>
@@ -102,59 +102,59 @@
                 </div>
                 <div id="billing-option">
                     <div id="monthly">monthly</div>
-                    <div id="option-button"></div>
+                    <div id="option-button"><span></span></div>
                     <div id="yearly">yearly</div>
                 </div>
             </div>
 
             <div class="content not-displayed">
-                <h2>pick add-ons</h2>
-                <p>add-ons help enhance your gaming experience</p>
+                <h2>Pick add-ons</h2>
+                <p>Add-ons help enhance your gaming experience</p>
                 <div id="add-ons-selection">
 
                     <div class="add-on">
-                        <input type="checkbox">
+                        <div class="checkbox"><img src="assets/images/icon-checkmark.svg"></div>
                         <div class="add-on-description">
-                            <h5>online service</h5>
-                            <h6>access to multiplayer games</h6>
+                            <h5>Online service</h5>
+                            <h6>Access to multiplayer games</h6>
                         </div>
-                        <span class="price">+1$/mo</span>
+                        <span class="price">+$1/mo</span>
                     </div>
                     
                     <div class="add-on">
-                        <input type="checkbox">
+                        <div class="checkbox"><img src="assets/images/icon-checkmark.svg"></div>
                         <div class="add-on-description">
-                            <h5>larger storage</h5>
-                            <h6>extra 1TB of cloud save</h6>
+                            <h5>Larger storage</h5>
+                            <h6>Extra 1TB of cloud save</h6>
                         </div>
-                        <span class="price">+2$/mo</span>
+                        <span class="price">+$2/mo</span>
                     </div>
 
                     <div class="add-on">
-                        <input type="checkbox">
+                        <div class="checkbox"><img src="assets/images/icon-checkmark.svg"></div>
                         <div class="add-on-description">
-                            <h5>customizable profile</h5>
-                            <h6>custom theme on your profile</h6>
+                            <h5>Customizable profile</h5>
+                            <h6>Custom theme on your profile</h6>
                         </div>
-                        <span class="price">+2$/mo</span>
+                        <span class="price">+$2/mo</span>
                     </div>
 
                 </div>
             </div>
 
             <div class="content not-displayed">
-                <h2>finishing up</h2>
+                <h2>Finishing up</h2>
                 <p>double-check everything looks OK before confirming</p>
                 <div id="price-details">
 
                     <div id="selected-plan">
                         <div>
-                          <h3>arcade (Monthly)</h3>
-                          <h4>change</h4>
+                          <h3>Arcade (Monthly)</h3>
+                          <h4>Change</h4>
                         </div>
-                        <div class="price">$9/mo</div>
+                        <span>$9/mo</span>
                     </div>
-                    <div class="selected-add-ons">
+                    <div id="selected-add-ons">
                         <div class="selected-add-on">
                             <h4>Online Service</h4>
                             <span class="price">+$1/mo</span>
@@ -168,19 +168,21 @@
                             <span class="price">+$2/mo</span>
                         </div>
                     </div>
-                    <div class="total">
-                      <h4>total (per <span class="price">month</span>)</h4>
-                      <span class="price">+$12/mo</span>
-                    </div>
+                </div>
+                <div id="total">
+                  <h4>Total (per <span class="price">month</span>)</h4>
+                  <span class="price">+$12/mo</span>
                 </div>
             </div>            
 
-            <div class="content not-displayed">
-              <div id="thanks-icon"></div>
-              <h2>thank you!</h2>
-              <p>Thanks for confirming your subscription! We hope you have fun 
-                using our platform. If you ever need support, please feel free 
-                to email us at support@loremgaming.com.</p>
+            <div class="content">
+                <div id="thank-you">
+                    <div id="thanks-icon"><img src="assets/images/icon-thank-you.svg"></div>
+                    <h2>Thank you!</h2>
+                    <p>Thanks for confirming your subscription! We hope you have fun 
+                        using our platform. If you ever need support, please feel free 
+                        to email us at support@loremgaming.com.</p>
+                </div>
             </div>
         </div>
 

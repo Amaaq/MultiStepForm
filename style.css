@@ -6,6 +6,8 @@ body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
 }
 .not-displayed {
     display: none;
@@ -46,8 +48,221 @@ body {
     border-radius: 0.5rem;
     width: 90%;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 1.5rem;
     text-align: left;
+}
+h2 {
+    font-size: 1.6rem;
+    color: hsl(213, 96%, 18%);
+    font-weight: 700;
+}
+p {
+    color: hsl(231, 11%, 63%);
+    margin: 0.3rem 0 1rem 0;
+    line-height: 1.5rem;
+    font-size: 1rem;
+}
+
+
+/* FIRST STEP */
+        form div {
+            margin: 1rem 0;
+        }
+        form label {
+            display: block;
+            color: hsl(213, 96%, 18%);
+            margin-bottom: 0.4rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        form input {
+            display: block;
+            width: 100%;
+            padding: 0.7rem 1rem;
+            outline: none;
+            border: 1px solid hsl(231, 11%, 63%);
+            border-radius: 8px;
+        }
+        form input::placeholder {
+            color: hsl(231, 11%, 63%);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+/* SECOND STEP */
+        .plan {
+            border: 1px solid hsl(231, 11%, 63%);
+            border-radius: 8px;
+            padding: 0.8rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: start;
+            justify-content: start;
+            cursor: pointer;
+        }
+        .plan h5{
+            text-transform: capitalize;
+            color: hsl(213, 96%, 18%);
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        .plan h6{
+            color: hsl(231, 11%, 63%);
+            margin: 0.2rem 0 0.4rem;
+            font-size: 0.8rem;
+        }
+        .plan .free{
+            color: hsl(213, 96%, 18%);
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+        .plan-name-price {
+            flex-grow: 1;
+        }
+        .icon{
+            margin-right: 0.5rem;
+        }
+        .icon img {
+            width: 90%;
+        }
+        #billing-option {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem;
+            background-color: hsl(231, 100%, 99%);
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        #option-button {
+            background-color: hsl(213, 96%, 18%);
+            width: 2rem;
+            height: 1.1rem;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            padding: 0 0.3rem;
+            cursor: pointer;
+        }
+        #option-button span {
+            width: 0.6rem;
+            height: 0.6rem;
+            background-color: white;
+            border-radius: 50%;
+        }
+        #monthly, #yearly{
+            text-transform: capitalize;
+            color: hsl(231, 11%, 63%);
+            font-size: 0.8rem;
+
+        }
+
+        
+/* THIRD STEP */
+
+.add-on {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border: 1px solid hsl(229, 24%, 87%);
+    margin-bottom: 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.checkbox {
+    border: 1px solid hsl(229, 24%, 87%);
+    padding: 0.1rem 0.2rem;
+    background-color: none;
+    border-radius: 3px;
+}
+.add-on-description {
+    flex-grow: 1;
+}
+.add-on-description h5 {
+    font-size: 0.8rem;
+    color: hsl(213, 96%, 18%) ;
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+}
+.add-on-description h6 {
+    font-size: 0.7rem;
+    color: hsl(231, 11%, 63%);
+}
+.add-on span {
+    font-size: 0.7rem;
+    color: hsl(243, 100%, 62%);
+}
+
+/* FOURTH STEP */
+
+#price-details {
+    background-color: hsl(231, 100%, 99%);
+    padding: 1rem;
+    border-radius: 8px;
+}
+#selected-plan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid hsl(229, 24%, 87%) ;
+}
+#selected-plan h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: hsl(213, 96%, 18%);
+    margin-bottom: 0.3rem;
+}
+#selected-plan h4 {
+    color: hsl(231, 11%, 63%);
+    text-decoration: underline;
+}
+#selected-plan span {
+    color: hsl(213, 96%, 18%);
+    font-weight: 700;
+}
+.selected-add-on {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+.selected-add-on h4, #total h4{
+    color: hsl(231, 11%, 63%);
+}
+.selected-add-on span {
+    color: hsl(213, 96%, 18%);;
+}
+#total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem 0;
+}
+#total > span {
+    color: hsl(243, 100%, 62%);
+    font-weight: 700;
+    font-size: 1.01rem;
+}
+
+/* THANK YOU  */
+#thank-you {
+    text-align: center;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+#thank-you img {
+    width: 3rem;
+}
+#thank-you h2 {
+    margin: 1rem;
+}
+#thank-you p {
+    font-size: 0.9rem;
 }
 #step-buttons {
     position: absolute;
@@ -71,4 +286,10 @@ body {
     color: hsl(231, 11%, 63%);
     font-weight: 500;
     cursor: pointer;
+}
+
+@media (min-width:375px) {
+    #container {
+        background-size: contain;
+    }
 }
