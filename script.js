@@ -42,6 +42,7 @@ function displayStepContent(){
 }
 function changeStepNumberColor(){
     steps.forEach((element,index)=>{
+        if(step == 5)return
         if(index>3)return
         if(index == step-1){
             element.style.backgroundColor = 'hsl(206, 94%, 87%)'
@@ -57,9 +58,13 @@ function changeStepNumberColor(){
 
 function changeFooterDisplay(){
     if(step>4){
-        footer.style.display = "none"
+        if(window.innerWidth>600){
+            footer.style.visibility = "hidden"
+        }else{
+            footer.style.display = "none"
+        }
     }else if(step>3){
-        footer.style.display = "flex"
+        footer.removeAttribute('style')
         next.textContent = "Confirm"
         next.style.backgroundColor = "hsl(243, 100%, 62%)"
     }else if (step>1){
