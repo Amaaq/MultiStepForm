@@ -181,7 +181,10 @@ p {
             text-transform: capitalize;
             color: hsl(231, 11%, 63%);
             font-size: 0.8rem;
-
+            font-weight: 700;
+        }
+        #monthly {
+            color: hsl(213, 96%, 18%);
         }
 
         
@@ -220,7 +223,8 @@ p {
     font-size: 0.7rem;
     color: hsl(231, 11%, 63%);
 }
-.add-on div:last-child {
+.add-on div:last-child, .add-on span{
+    font-weight: 700;
     font-size: 0.7rem;
     color: hsl(243, 100%, 62%);
 }

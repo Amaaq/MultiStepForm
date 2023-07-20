@@ -9,9 +9,11 @@ let footer = document.querySelector('#step-buttons')
 let next = document.querySelector("#next-step")
 let previous = document.querySelector('#go-back')
 let form = document.forms[0]
+let monthly = document.querySelector('#monthly')
+let yearly = document.querySelector('#yearly')
 let selectedAddOns = document.querySelectorAll(".selected-add-on")
 let total = 0
-let monthly = true 
+let monthlyPeriod = true 
 let periodButton = document.querySelector("#option-button")
 let finalPeriod = document.querySelectorAll(".final-period")
 let finalPrice = document.querySelector("#final-price")
@@ -41,18 +43,22 @@ plans.forEach( plan=> {
 })
 
 periodButton.addEventListener('click',()=>{
-    monthly = !monthly
+    monthlyPeriod = !monthlyPeriod
     updatePrices()
-    if(monthly){
+    if(monthlyPeriod){
         periodButton.style.justifyContent = "left"
         finalPeriod.forEach(element=>{
             element.textContent = "month"
         })
+        monthly.removeAttribute('style')
+        yearly.removeAttribute('style')
     } else {
         periodButton.style.justifyContent = "right"
         finalPeriod.forEach(element=>{
             element.textContent = "year"
         })
+        yearly.style.color = "hsl(213, 96%, 18%)"
+        monthly.style.color = "hsl(231, 11%, 63%)"
     }
 })
 
@@ -174,7 +180,7 @@ function validFormFields(){
 function updatePrices(){
     let prices = document.querySelectorAll(".price")
     let periods = document.querySelectorAll(".period")
-    if(monthly == true){
+    if(monthlyPeriod == true){
         periods.forEach(period => {
             period.textContent = 'mo'
         })
