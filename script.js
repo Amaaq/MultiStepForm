@@ -5,9 +5,24 @@ let previous = document.querySelector('#go-back')
 let footer = document.querySelector('#step-buttons')
 let steps = document.querySelectorAll('.step-number')
 let change = document.querySelector('#change')
+let errors = document.querySelectorAll('.error')
+let form = document.forms[0]
 displayStepContent()
 changeStepNumberColor()
+
+for(let i=0; i<3;i++){
+    form[i].addEventListener('input',()=>{
+        form[i].removeAttribute('style')
+        if(!errors[i].classList.contains('hidden')){
+            errors[i].classList.add('hidden')
+        }
+    })
+}
+
 next.addEventListener('click',()=>{
+    if(step == 1 && !validFormFields()){
+        return
+    }
     step++
     displayStepContent()
     changeStepNumberColor()
@@ -74,5 +89,26 @@ function changeFooterDisplay(){
     }else if(!previous.classList.contains("hidden")){
         previous.classList.add("hidden")
     }
+}
+
+function validFormFields(){
+    let result = true;
+    let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+    if(form[0].value == ""){
+        errors[0].classList.remove("hidden")
+        form[0].style.borderColor = 'hsl(354, 84%, 57%)'
+        result = false
+    } 
+    if(!regex.test(form[1].value)){
+        errors[1].classList.remove("hidden")
+        form[1].style.borderColor = 'hsl(354, 84%, 57%)'
+        result = false
+    } 
+    if(form[2].value == ""){
+        errors[2].classList.remove("hidden")
+        form[2].style.borderColor = 'hsl(354, 84%, 57%)'
+        result = false
+    } 
+    return result
 }
 

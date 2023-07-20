@@ -54,15 +54,18 @@
                 <form>
                     <div>
                         <label for="name">Name</label>
-                        <input type="text" id="name" placeholder="e.g. Stephen King" name="name">
+                        <div class="error hidden">This field is required</div>
+                        <input type="text" id="name" placeholder="e.g. Stephen King" name="name" autocomplete="name">
                     </div>
                     <div>
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="e.g. stephenking@lorem.com">
+                        <div class="error hidden">Invalid email</div>
+                        <input type="email" id="email" name="email" placeholder="e.g. stephenking@lorem.com" autocomplete="email">
                     </div>
                     <div>
                         <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="e.g +1 234 567 890">
+                        <div class="error hidden">This field is required</div>
+                        <input type="tel" id="phone" name="phone" placeholder="e.g +1 234 567 890" autocomplete="tel">
                     </div>
                 </form>
             </div>

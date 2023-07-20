@@ -73,8 +73,17 @@ p {
 
 
 /* FIRST STEP */
-        form div {
+        form > div {
             margin: 1rem 0;
+            position: relative;
+        }
+        .error {
+            position: absolute;
+            top: 0;
+            right: 0;
+            text-align: right;
+            color: hsl(354, 84%, 57%);
+            font-weight: 700;
         }
         form label {
             display: block;
@@ -88,8 +97,11 @@ p {
             width: 100%;
             padding: 0.7rem 1rem;
             outline: none;
-            border: 1px solid hsl(231, 11%, 63%);
+            border: 1px solid hsl(229, 24%, 87%);
             border-radius: 8px;
+        }
+        input:focus {
+            border-color: hsl(243, 100%, 62%);
         }
         form input::placeholder {
             color: hsl(231, 11%, 63%);
@@ -99,7 +111,7 @@ p {
 
 /* SECOND STEP */
         .plan {
-            border: 1px solid hsl(231, 11%, 63%);
+            border: 1px solid hsl(229, 24%, 87%);
             border-radius: 8px;
             padding: 0.8rem;
             margin-bottom: 0.5rem;
@@ -107,6 +119,9 @@ p {
             align-items: start;
             justify-content: start;
             cursor: pointer;
+        }
+        .plan:hover {
+            border-color: hsl(213, 96%, 18%);
         }
         .plan h5{
             text-transform: capitalize;
@@ -180,6 +195,9 @@ p {
     margin-bottom: 0.8rem;
     border-radius: 8px;
     cursor: pointer;
+}
+.add-on:hover {
+    border-color: hsl(213, 96%, 18%);
 }
 .checkbox {
     border: 1px solid hsl(229, 24%, 87%);
@@ -291,12 +309,18 @@ p {
     border-radius: 0.3rem;
     cursor: pointer;
 }
+#next-step:hover {
+    background-color: hsl(243, 100%, 62%);
+}
 #go-back {
     color: hsl(231, 11%, 63%);
     font-weight: 500;
     cursor: pointer;
 }
-
+#go-back:hover {
+    color: hsl(213, 96%, 18%);
+    font-weight: 700;
+}
 @media (min-width:375px) {
     #container {
         background-size: contain;
@@ -307,7 +331,7 @@ p {
         justify-content: center;
         align-items: center;
         height: 100vh;
-        font-size: 12px;
+        font-size: 14px;
         background-color: hsl(228, 100%, 84%);
     }
     #container {
