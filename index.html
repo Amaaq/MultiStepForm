@@ -79,8 +79,8 @@
                         <div class="icon"><img src="assets/images/icon-arcade.svg"></div>
                         <div class="plan-name-price">
                             <h5>arcade</h5>
-                            <h6 class="price">$9/mo</h6>
-                            <div class="free">2 months free</div>
+                            <h6>$<span class="price" id="arcade-price">9</span>/<span class="period">mo</span></h6>
+                            <div class="free not-displayed">2 months free</div>
                         </div>
                     </div>
 
@@ -88,8 +88,8 @@
                         <div class="icon"><img src="assets/images/icon-advanced.svg"></div>
                         <div class="plan-name-price">
                             <h5>advanced</h5>
-                            <h6 class="price">$12/mo</h6>
-                            <div class="free">2 months free</div>
+                            <h6>$<span class="price" id="advanced-price">12</span>/<span class="period">mo</span></h6>
+                            <div class="free not-displayed">2 months free</div>
                         </div>
                     </div>
 
@@ -97,8 +97,8 @@
                         <div class="icon"><img src="assets/images/icon-pro.svg"></div>
                         <div class="plan-name-price">
                             <h5>pro</h5>
-                            <h6 class="price">$15/mo</h6>
-                            <div class="free">2 months free</div>
+                            <h6>$<span class="price" id="pro-price">15</span>/<span class="period">mo</span></h6>
+                            <div class="free not-displayed">2 months free</div>
                         </div>
                     </div>
 
@@ -121,7 +121,7 @@
                             <h5>Online service</h5>
                             <h6>Access to multiplayer games</h6>
                         </div>
-                        <span class="price">+$1/mo</span>
+                        <div class="add-on-price">+$<span class="price" id="online-price">1</span>/<span class="period">mo</span></div>
                     </div>
                     
                     <div class="add-on">
@@ -130,7 +130,7 @@
                             <h5>Larger storage</h5>
                             <h6>Extra 1TB of cloud save</h6>
                         </div>
-                        <span class="price">+$2/mo</span>
+                        <div class="add-on-price">+$<span class="price" id="storage-price">2</span>/<span class="period">mo</span></div>
                     </div>
 
                     <div class="add-on">
@@ -139,7 +139,7 @@
                             <h5>Customizable profile</h5>
                             <h6>Custom theme on your profile</h6>
                         </div>
-                        <span class="price">+$2/mo</span>
+                        <div class="add-on-price">+$<span class="price" id="customizable-price">2</span>/<span class="period">mo</span></div>
                     </div>
 
                 </div>
@@ -152,29 +152,29 @@
 
                     <div id="selected-plan">
                         <div>
-                          <h3>Arcade (Monthly)</h3>
+                          <h3><span id="final-plan"></span> (<span class="final-period">month</span>ly)</h3>
                           <h4 id="change">Change</h4>
                         </div>
-                        <span>$9/mo</span>
+                        <div>+$<span id="final-plan-price">9</span>/<span class="period">mo</span></div>
                     </div>
                     <div id="selected-add-ons">
-                        <div class="selected-add-on">
+                        <div class="selected-add-on not-displayed">
                             <h4>Online Service</h4>
-                            <span class="price">+$1/mo</span>
+                            <div>+$<span class="price">1</span>/<span class="period">mo</span></div>
                         </div>
-                        <div class="selected-add-on">
+                        <div class="selected-add-on not-displayed">
                             <h4>Larger Storage</h4>
-                            <span class="price">+$2/mo</span>
+                            <div>+$<span class="price">2</span>/<span class="period">mo</span></div>
                         </div>
-                        <div class="selected-add-on">
+                        <div class="selected-add-on not-displayed">
                             <h4>Customizable Profile</h4>
-                            <span class="price">+$2/mo</span>
+                            <div>+$<span class="price">2</span>/<span class="period">mo</span></div>
                         </div>
                     </div>
                 </div>
                 <div id="total">
-                  <h4>Total (per <span class="price">month</span>)</h4>
-                  <span class="price">+$12/mo</span>
+                  <h4>Total (per <span class="final-period">month</span>)</h4>
+                  <div>+$<span id="final-price"></span>/<span class="period">mo</span></div>
                 </div>
             </div>            
 

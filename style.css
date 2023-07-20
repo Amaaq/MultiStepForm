@@ -9,13 +9,13 @@ body {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
 }
-.not-displayed {
+.not-displayed, .selected-add-on.not-displayed{
     display: none;
 }
 .hidden {
     visibility: hidden;
 }
-.selected {
+.plan.selected , .add-on.selected {
     border-color: hsl(213, 96%, 18%) ;
     background-color: hsl(231, 100%, 99%);
 }
@@ -99,6 +99,8 @@ p {
             outline: none;
             border: 1px solid hsl(229, 24%, 87%);
             border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
         }
         input:focus {
             border-color: hsl(243, 100%, 62%);
@@ -218,7 +220,7 @@ p {
     font-size: 0.7rem;
     color: hsl(231, 11%, 63%);
 }
-.add-on span {
+.add-on div:last-child {
     font-size: 0.7rem;
     color: hsl(243, 100%, 62%);
 }
@@ -242,13 +244,17 @@ p {
     font-weight: 700;
     color: hsl(213, 96%, 18%);
     margin-bottom: 0.3rem;
+    text-transform: capitalize;
 }
 #selected-plan h4 {
     color: hsl(231, 11%, 63%);
     text-decoration: underline;
     cursor: pointer;
 }
-#selected-plan span {
+#selected-plan h4:hover {
+    color: hsl(243, 100%, 62%);
+}
+#selected-plan div:last-child, #selected-plan span {
     color: hsl(213, 96%, 18%);
     font-weight: 700;
 }
@@ -261,7 +267,7 @@ p {
 .selected-add-on h4, #total h4{
     color: hsl(231, 11%, 63%);
 }
-.selected-add-on span {
+.selected-add-on div {
     color: hsl(213, 96%, 18%);;
 }
 #total {
@@ -270,7 +276,7 @@ p {
     align-items: center;
     padding: 1rem 1rem 0;
 }
-#total > span {
+#total > div, #total div span {
     color: hsl(243, 100%, 62%);
     font-weight: 700;
     font-size: 1.01rem;
@@ -310,7 +316,7 @@ p {
     cursor: pointer;
 }
 #next-step:hover {
-    background-color: hsl(243, 100%, 62%);
+    opacity: 0.7;
 }
 #go-back {
     color: hsl(231, 11%, 63%);
@@ -408,20 +414,20 @@ p {
 
     #plan-selection {
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: stretch;
         gap: 1rem;
         margin-top: 1.5rem;
     }
     .plan {
-        flex-grow: 1;
+        flex: 1;
         display: block
     }
     .icon{
         margin: 0 0 2rem 0;
     }
     .icon img {
-        width: 50%;
+        width: 2.5rem;
     }
 }
 

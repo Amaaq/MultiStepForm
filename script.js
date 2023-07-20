@@ -1,14 +1,27 @@
 let step=1;
 let contents = document.querySelectorAll(".content")
+let steps = document.querySelectorAll('.step-number')
+let errors = document.querySelectorAll('.error')
+let plans = document.querySelectorAll(".plan")
+let addOns = document.querySelectorAll(".add-on")
+let change = document.querySelector('#change')
+let footer = document.querySelector('#step-buttons')
 let next = document.querySelector("#next-step")
 let previous = document.querySelector('#go-back')
-let footer = document.querySelector('#step-buttons')
-let steps = document.querySelectorAll('.step-number')
-let change = document.querySelector('#change')
-let errors = document.querySelectorAll('.error')
 let form = document.forms[0]
+let selectedAddOns = document.querySelectorAll(".selected-add-on")
+let total = 0
+let monthly = true 
+let periodButton = document.querySelector("#option-button")
+let finalPeriod = document.querySelectorAll(".final-period")
+let finalPrice = document.querySelector("#final-price")
+let finalPlan = document.querySelector('#final-plan')
+let finalPlanPrice = document.querySelector('#final-plan-price')
+
+
 displayStepContent()
 changeStepNumberColor()
+
 
 for(let i=0; i<3;i++){
     form[i].addEventListener('input',()=>{
@@ -18,10 +31,56 @@ for(let i=0; i<3;i++){
         }
     })
 }
+plans.forEach( plan=> {
+    plan.addEventListener('click',()=>{
+        plans.forEach(otherplan=>{
+            otherplan.classList.remove('selected')
+        })
+        plan.classList.add('selected')
+    })
+})
+
+periodButton.addEventListener('click',()=>{
+    monthly = !monthly
+    updatePrices()
+    if(monthly){
+        periodButton.style.justifyContent = "left"
+        finalPeriod.forEach(element=>{
+            element.textContent = "month"
+        })
+    } else {
+        periodButton.style.justifyContent = "right"
+        finalPeriod.forEach(element=>{
+            element.textContent = "year"
+        })
+    }
+})
+
+addOns.forEach((addOn,index) => {
+    addOn.addEventListener('click',()=>{
+        addOn.classList.toggle('selected')
+        selectedAddOns[index].classList.toggle('not-displayed')
+    })
+})
 
 next.addEventListener('click',()=>{
     if(step == 1 && !validFormFields()){
         return
+    }
+    if(step == 2){
+        if(contents[1].querySelectorAll(".selected").length==0) return
+        
+    } 
+    if(step == 3){
+        total = Number(contents[1].querySelector(".selected .price").textContent) 
+        finalPlan.textContent = contents[1].querySelector(".selected h5").textContent
+        finalPlanPrice.textContent = contents[1].querySelector(".selected .price").textContent
+        addOns.forEach((addOn,index) => {
+            if(addOn.classList.contains("selected")){
+                total += Number(addOn.querySelector(".price").textContent)
+            }
+        })
+        finalPrice.textContent = total
     }
     step++
     displayStepContent()
@@ -112,3 +171,22 @@ function validFormFields(){
     return result
 }
 
+function updatePrices(){
+    let prices = document.querySelectorAll(".price")
+    let periods = document.querySelectorAll(".period")
+    if(monthly == true){
+        periods.forEach(period => {
+            period.textContent = 'mo'
+        })
+        prices.forEach(price=>{
+            price.textContent = Number(price.textContent)/10
+        })
+    } else {
+        periods.forEach(period => {
+            period.textContent = 'yr'
+        })
+        prices.forEach(price=>{
+            price.textContent = Number(price.textContent)*10
+        })
+    }
+}
