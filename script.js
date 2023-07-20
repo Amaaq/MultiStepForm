@@ -14,6 +14,7 @@ let yearly = document.querySelector('#yearly')
 let selectedAddOns = document.querySelectorAll(".selected-add-on")
 let total = 0
 let monthlyPeriod = true 
+let free =document.querySelectorAll(".free")
 let periodButton = document.querySelector("#option-button")
 let finalPeriod = document.querySelectorAll(".final-period")
 let finalPrice = document.querySelector("#final-price")
@@ -44,6 +45,9 @@ plans.forEach( plan=> {
 
 periodButton.addEventListener('click',()=>{
     monthlyPeriod = !monthlyPeriod
+    free.forEach(element => {
+        element.classList.toggle('not-displayed')
+    })
     updatePrices()
     if(monthlyPeriod){
         periodButton.style.justifyContent = "left"
