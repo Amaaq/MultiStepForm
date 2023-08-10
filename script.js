@@ -22,16 +22,19 @@ let finalPlan = document.querySelector('#final-plan')
 let finalPlanPrice = document.querySelector('#final-plan-price')
 
 let sendRequest = document.querySelector('#fetch')
-sendRequest.addEventListener('click',(e)=>{
+sendRequest.addEventListener('click',async (e)=>{
     e.preventDefault()
-    console.log(fetch('https://amaaq.github.io/authAPI/auth/signin',{
+    let data = await fetch('https://amaaq.github.io/authAPI/auth/signin',{
         method: 'post',
         body : {
             email : "maaqoul.adil@gmail.com",
             password : "123456789"
         }
-    }))
+    })
+    let response = await data.json()
+    console.log(response)
 })
+
 
 displayStepContent()
 changeStepNumberColor()
