@@ -26,10 +26,10 @@ sendRequest.addEventListener('click',async (e)=>{
     e.preventDefault()
     let data = await fetch('https://amaaq.github.io/authAPI/auth/signin',{
         method: 'post',
-        body : {
+        body : JSON.stringify({
             email : "maaqoul.adil@gmail.com",
             password : "123456789"
-        }
+        })
     })
     console.log(data)
 })
