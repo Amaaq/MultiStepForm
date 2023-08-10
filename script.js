@@ -31,8 +31,7 @@ sendRequest.addEventListener('click',async (e)=>{
             password : "123456789"
         }
     })
-    let response = await data.json()
-    console.log(response)
+    console.log(data)
 })
 
 
